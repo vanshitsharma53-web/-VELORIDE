@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VeloRide | Premium Bikes</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --dark: #101b18;
+      --green: #b9f227;
+      --cream: #f5f7ef;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--cream);
+      color: var(--dark);
+      font-family: Arial, sans-serif;
+    }
+
+    .dark-bg {
+      background: var(--dark);
+    }
+
+    .green-bg {
+      background: var(--green);
+    }
+
+    .green-text {
+      color: var(--green);
+    }
+
+    .hero {
+      background:
+        linear-gradient(90deg, rgba(16,27,24,.94), rgba(16,27,24,.45)),
+        url("https://images.unsplash.com/photo-1541625602330-2277a4c46182?auto=format&fit=crop&w=2200&q=85")
+        center/cover;
+    }
+
+    .scrolled {
+      background: rgba(16, 27, 24, .97);
+      box-shadow: 0 5px 25px rgba(0,0,0,.2);
+    }
+
+    .bike-card {
+      transition: .3s ease;
+    }
+
+    .bike-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 35px rgba(16,27,24,.15);
+    }
+
+    .bike-card img {
+      transition: .5s ease;
+    }
+
+    .bike-card:hover img {
+      transform: scale(1.08);
+    }
+
+    .mobile-menu {
+      display: none;
+    }
+
+    .mobile-menu.active {
+      display: flex;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <header id="navbar" class="fixed top-0 z-50 w-full text-white transition-all duration-300">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 lg:px-8">
+      <a href="#home" class="text-2xl font-black">
+        VELO<span class="green-text">RIDE</span>
+      </a>
+
+      <div id="menu" class="mobile-menu absolute left-0 top-full w-full flex-col gap-5 bg-[#101b18] px-6 py-6 md:static md:flex md:w-auto md:flex-row md:items-center md:bg-transparent md:p-0">
+        <a href="#home" class="hover:text-[#b9f227]">Home</a>
+        <a href="#bikes" class="hover:text-[#b9f227]">Bikes</a>
+        <a href="#services" class="hover:text-[#b9f227]">Services</a>
+        <a href="#about" class="hover:text-[#b9f227]">About</a>
+        <a href="#reviews" class="hover:text-[#b9f227]">Reviews</a>
+        <a href="#contact" class="rounded-full bg-[#b9f227] px-5 py-3 font-bold text-[#101b18]">
+          Contact Us
+        </a>
+      </div>
+
+      <button id="menuBtn" class="text-3xl md:hidden">
+        <i class="ri-menu-4-line"></i>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="hero flex min-h-screen items-center text-white">
+    <div class="mx-auto w-full max-w-7xl px-5 pt-24 lg:px-8">
+      <div class="max-w-3xl" data-aos="fade-up">
+        <p class="mb-5 font-bold uppercase tracking-[.25em] text-[#b9f227]">
+          Premium bikes for every journey
+        </p>
+
+        <h1 class="text-5xl font-black leading-tight sm:text-6xl lg:text-8xl">
+          Ride beyond<br>limits.
+        </h1>
+
+        <p class="mt-6 max-w-xl text-lg leading-8 text-white/75">
+          Discover powerful, comfortable and stylish bikes designed for modern adventures.
+        </p>
+
+        <div class="mt-9 flex flex-wrap gap-4">
+          <a href="#bikes" class="rounded-full bg-[#b9f227] px-7 py-4 font-bold text-[#101b18] hover:bg-white">
+            Explore Bikes <i class="ri-arrow-right-line"></i>
+          </a>
+
+          <a href="#about" class="rounded-full border border-white/40 px-7 py-4 font-bold hover:border-[#b9f227] hover:text-[#b9f227]">
+            Learn More
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="dark-bg py-8 text-white">
+    <div class="mx-auto grid max-w-7xl gap-8 px-5 text-center sm:grid-cols-3 lg:px-8">
+      <div data-aos="fade-up">
+        <h3 class="text-4xl font-black green-text">15+</h3>
+        <p class="mt-2 text-white/60">Years Experience</p>
+      </div>
+
+      <div data-aos="fade-up" data-aos-delay="100">
+        <h3 class="text-4xl font-black green-text">25K+</h3>
+        <p class="mt-2 text-white/60">Happy Riders</p>
+      </div>
+
+      <div data-aos="fade-up" data-aos-delay="200">
+        <h3 class="text-4xl font-black green-text">40+</h3>
+        <p class="mt-2 text-white/60">Bike Models</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bikes -->
+  <section id="bikes" class="py-24">
+    <div class="mx-auto max-w-7xl px-5 lg:px-8">
+      <div class="mb-12 text-center" data-aos="fade-up">
+        <p class="font-bold uppercase tracking-[.2em] text-green-700">Our Collection</p>
+        <h2 class="mt-3 text-4xl font-black sm:text-5xl">Find your perfect ride.</h2>
+        <p class="mx-auto mt-4 max-w-xl text-gray-600">
+          Every VeloRide bike is built for comfort, performance and unforgettable journeys.
+        </p>
+      </div>
+
+      <div class="grid gap-7 md:grid-cols-2 lg:grid-cols-3">
+
+        <article class="bike-card overflow-hidden rounded-3xl bg-white" data-aos="fade-up">
+          <div class="h-72 overflow-hidden">
+            <img class="h-full w-full object-cover"
+              src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=900&q=85"
+              alt="City electric bike">
+          </div>
+          <div class="p-6">
+            <p class="text-sm font-bold uppercase tracking-widest text-gray-500">Urban Series</p>
+            <h3 class="mt-2 text-2xl font-black">City Sprint</h3>
+            <div class="mt-5 flex items-center justify-between">
+              <strong class="text-xl">$1,299</strong>
+              <button class="rounded-full bg-[#101b18] px-5 py-3 text-[#b9f227]">
+                View Bike
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="bike-card overflow-hidden rounded-3xl bg-white" data-aos="fade-up" data-aos-delay="100">
+          <div class="h-72 overflow-hidden">
+            <img class="h-full w-full object-cover"
+              src="https://images.unsplash.com/photo-1571068316344-75bc76f77890?auto=format&fit=crop&w=900&q=85"
+              alt="Mountain bike">
+          </div>
+          <div class="p-6">
+            <p class="text-sm font-bold uppercase tracking-widest text-gray-500">Trail Series</p>
+            <h3 class="mt-2 text-2xl font-black">Terra X1</h3>
+            <div class="mt-5 flex items-center justify-between">
+              <strong class="text-xl">$1,899</strong>
+              <button class="rounded-full bg-[#101b18] px-5 py-3 text-[#b9f227]">
+                View Bike
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="bike-card overflow-hidden rounded-3xl bg-white" data-aos="fade-up" data-aos-delay="200">
+          <div class="h-72 overflow-hidden">
+            <img class="h-full w-full object-cover"
+              src="https://images.unsplash.com/photo-1502744688674-c619d1586c9e?auto=format&fit=crop&w=900&q=85"
+              alt="Road performance bike">
+          </div>
+          <div class="p-6">
+            <p class="text-sm font-bold uppercase tracking-widest text-gray-500">Performance Series</p>
+            <h3 class="mt-2 text-2xl font-black">Aero Pro</h3>
+            <div class="mt-5 flex items-center justify-between">
+              <strong class="text-xl">$2,499</strong>
+              <button class="rounded-full bg-[#101b18] px-5 py-3 text-[#b9f227]">
+                View Bike
+              </button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="dark-bg py-24 text-white">
+    <div class="mx-auto max-w-7xl px-5 lg:px-8">
+      <div class="mb-12 text-center" data-aos="fade-up">
+        <p class="font-bold uppercase tracking-[.2em] text-[#b9f227]">Why Choose Us</p>
+        <h2 class="mt-3 text-4xl font-black sm:text-5xl">Everything you need to ride.</h2>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-3">
+        <div class="rounded-3xl border border-white/10 p-8" data-aos="fade-up">
+          <i class="ri-award-line text-5xl text-[#b9f227]"></i>
+          <h3 class="mt-6 text-2xl font-bold">Premium Quality</h3>
+          <p class="mt-4 leading-7 text-white/60">
+            Carefully selected materials and professional engineering for a better ride.
+          </p>
+        </div>
+
+        <div class="rounded-3xl border border-white/10 p-8" data-aos="fade-up" data-aos-delay="100">
+          <i class="ri-tools-line text-5xl text-[#b9f227]"></i>
+          <h3 class="mt-6 text-2xl font-bold">Bike Servicing</h3>
+          <p class="mt-4 leading-7 text-white/60">
+            Our expert technicians keep your bike safe, smooth and ready for every trip.
+          </p>
+        </div>
+
+        <div class="rounded-3xl border border-white/10 p-8" data-aos="fade-up" data-aos-delay="200">
+          <i class="ri-truck-line text-5xl text-[#b9f227]"></i>
+          <h3 class="mt-6 text-2xl font-bold">Fast Delivery</h3>
+          <p class="mt-4 leading-7 text-white/60">
+            Enjoy quick and secure delivery directly to your home.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-24">
+    <div class="mx-auto grid max-w-7xl items-center gap-12 px-5 lg:grid-cols-2 lg:px-8">
+      <div data-aos="fade-right">
+        <img
+          class="h-[500px] w-full rounded-3xl object-cover"
+          src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=1000&q=85"
+          alt="Cyclist riding a bike">
+      </div>
+
+      <div data-aos="fade-left">
+        <p class="font-bold uppercase tracking-[.2em] text-green-700">Our Story</p>
+        <h2 class="mt-4 text-4xl font-black leading-tight sm:text-5xl">
+          Built for people who love the journey.
+        </h2>
+        <p class="mt-6 leading-8 text-gray-600">
+          VeloRide began with one simple idea: cycling should feel exciting, comfortable and accessible to everyone.
+        </p>
+        <p class="mt-4 leading-8 text-gray-600">
+          Today, we create bikes that combine modern design, reliable performance and everyday practicality.
+        </p>
+        <a href="#contact" class="mt-8 inline-block rounded-full bg-[#101b18] px-7 py-4 font-bold text-[#b9f227]">
+          Talk to Our Team
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section id="reviews" class="bg-white py-24">
+    <div class="mx-auto max-w-7xl px-5 lg:px-8">
+      <div class="mb-12 text-center" data-aos="fade-up">
+        <p class="font-bold uppercase tracking-[.2em] text-green-700">Customer Reviews</p>
+        <h2 class="mt-3 text-4xl font-black">Loved by riders everywhere.</h2>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-3">
+        <div class="rounded-3xl bg-[#f5f7ef] p-7" data-aos="fade-up">
+          <div class="text-xl text-yellow-500">★★★★★</div>
+          <p class="mt-5 leading-7 text-gray-600">
+            “The City Sprint completely changed my daily commute. Smooth, fast and beautiful.”
+          </p>
+          <h4 class="mt-5 font-bold">— Sarah Miller</h4>
+        </div>
+
+        <div class="rounded-3xl bg-[#f5f7ef] p-7" data-aos="fade-up" data-aos-delay="100">
+          <div class="text-xl text-yellow-500">★★★★★</div>
+          <p class="mt-5 leading-7 text-gray-600">
+            “Excellent service and a fantastic bike. The team helped me choose the perfect model.”
+          </p>
+          <h4 class="mt-5 font-bold">— Daniel Cooper</h4>
+        </div>
+
+        <div class="rounded-3xl bg-[#f5f7ef] p-7" data-aos="fade-up" data-aos-delay="200">
+          <div class="text-xl text-yellow-500">★★★★★</div>
+          <p class="mt-5 leading-7 text-gray-600">
+            “The Terra X1 is powerful and comfortable on every trail. Highly recommended.”
+          </p>
+          <h4 class="mt-5 font-bold">— Michael Green</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact CTA -->
+  <section id="contact" class="px-5 py-24 lg:px-8">
+    <div class="mx-auto max-w-7xl rounded-3xl bg-[#b9f227] px-6 py-16 text-center" data-aos="zoom-in">
+      <h2 class="text-4xl font-black sm:text-5xl">Ready to start riding?</h2>
+      <p class="mx-auto mt-4 max-w-xl text-[#101b18]/70">
+        Contact our team today and find the perfect bike for your lifestyle.
+      </p>
+
+      <a href="mailto:hello@veloride.com"
+        class="mt-8 inline-block rounded-full bg-[#101b18] px-7 py-4 font-bold text-white hover:bg-white hover:text-[#101b18]">
+        Get in Touch <i class="ri-mail-line"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="dark-bg py-12 text-white">
+    <div class="mx-auto grid max-w-7xl gap-10 px-5 md:grid-cols-3 lg:px-8">
+      <div>
+        <a href="#home" class="text-2xl font-black">
+          VELO<span class="green-text">RIDE</span>
+        </a>
+        <p class="mt-4 max-w-xs leading-7 text-white/60">
+          Premium bikes for people who choose the long way home.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-bold green-text">Quick Links</h3>
+        <div class="mt-4 flex flex-col gap-3 text-white/60">
+          <a href="#bikes" class="hover:text-[#b9f227]">Our Bikes</a>
+          <a href="#services" class="hover:text-[#b9f227]">Services</a>
+          <a href="#about" class="hover:text-[#b9f227]">About Us</a>
+          <a href="#contact" class="hover:text-[#b9f227]">Contact</a>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="font-bold green-text">Follow Us</h3>
+        <div class="mt-4 flex gap-3">
+          <a href="#" class="grid h-10 w-10 place-items-center rounded-full border border-white/20 hover:bg-[#b9f227] hover:text-[#101b18]">
+            <i class="ri-instagram-line"></i>
+          </a>
+          <a href="#" class="grid h-10 w-10 place-items-center rounded-full border border-white/20 hover:bg-[#b9f227] hover:text-[#101b18]">
+            <i class="ri-facebook-fill"></i>
+          </a>
+          <a href="#" class="grid h-10 w-10 place-items-center rounded-full border border-white/20 hover:bg-[#b9f227] hover:text-[#101b18]">
+            <i class="ri-youtube-line"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mx-auto mt-10 max-w-7xl border-t border-white/10 px-5 pt-6 text-sm text-white/40 lg:px-8">
+      © <span id="year"></span> VeloRide. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- WhatsApp -->
+  <a href="https://wa.me/1234567890"
+    target="_blank"
+    class="fixed bottom-5 right-5 z-50 grid h-14 w-14 place-items-center rounded-full bg-[#25D366] text-3xl text-white shadow-lg hover:scale-110">
+    <i class="ri-whatsapp-line"></i>
+  </a>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+  <script>
+    const navbar = document.getElementById("navbar");
+    const menu = document.getElementById("menu");
+    const menuBtn = document.getElementById("menuBtn");
+
+    window.addEventListener("scroll", () => {
+      navbar.classList.toggle("scrolled", window.scrollY > 40);
+    });
+
+    menuBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+
+      menuBtn.innerHTML = menu.classList.contains("active")
+        ? '<i class="ri-close-line"></i>'
+        : '<i class="ri-menu-4-line"></i>';
+    });
+
+    document.querySelectorAll("#menu a").forEach(link => {
+      link.addEventListener("click", () => {
+        menu.classList.remove("active");
+        menuBtn.innerHTML = '<i class="ri-menu-4-line"></i>';
+      });
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 80
+    });
+  </script>
+
+</body>
+</html>
